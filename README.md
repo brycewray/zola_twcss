@@ -2,7 +2,7 @@
 
 This is a starter set for the [Zola](https://getzola.org) [static site generator (SSG)](https://www.jamstack.org/generators), based on the appearance of my website at [brycewray.com](https://www.brycewray.com).
 
-See the [online demo](https://zola-solo.vercel.app/).
+See the [online demo](https://zola-twcss.vercel.app/).
 
 ## How to use
 
@@ -15,11 +15,14 @@ See the [online demo](https://zola-solo.vercel.app/).
 
 ## What’s under the hood
 
-- Zola’s [built-in image processing capabilities](https://www.getzola.org/documentation/content/image-processing/). (The **real** site’s repo uses [Cloudinary](https://cloudinary.com) rather than having the images in the repo and processing them as such.)
-- [SCSS](https://sass-lang.com/) through [Zola’s built-in support](https://www.getzola.org/documentation/content/sass/).
+For Zola users unused to dealing with JavaScript from [Node.js](https://nodejs.org) plugins and dependencies, this repo may not be your cup of tea, and that’s perfectly understandable.\* However, if you’re willing to take a trip to the Dark Side, it does offer some interesting add-on possibilities. (That said, Zola’s single-binary, nearly-everything-out-of-the-box approach has served it well and is impressive.) In `package.json`, you’ll find dependencies that make possible the use of [PostCSS](https://postcss.org) and [Tailwind CSS](https://tailwindcss.com). The latter includes the still-in-preview **[@tailwindcss/jit](https://github.com/tailwindlabs/tailwindcss-jit) library**; read more about it in [this announcement](https://blog.tailwindcss.com/just-in-time-the-next-generation-of-tailwind-css).
+
+In addition, there are Zola’s [built-in image processing capabilities](https://www.getzola.org/documentation/content/image-processing/). (The **real** site’s repo uses [Cloudinary](https://cloudinary.com) rather than having the images in the repo and processing them as such.
 
 ## Handling footnotes
 
 Please see `/content/about/index.md` for information concerning how Zola handles footnotes, since this is different than you’ll likely find on other SSGs.
 
-*Effective 2021-06-25, development on this repository will be* ***on hold*** *at least until Zola is compatible with [Dart Sass](https://sass-lang.com/dart-sass) rather than the [deprecated Libsass](https://sass-lang.com/blog/libsass-is-deprecated) (see [Zola issue #1083](https://github.com/getzola/zola/issues/1083)).*
+*Effective 2021-06-26, development on this repository will be* ***on hold*** *at least until Zola is compatible with [Dart Sass](https://sass-lang.com/dart-sass) rather than the [deprecated Libsass](https://sass-lang.com/blog/libsass-is-deprecated) (see [Zola issue #1083](https://github.com/getzola/zola/issues/1083)).*
+
+\* If you don’t care for dealing with Node.js dependencies, you may be interested in another Zola repo, [zola_solo](https://github.com/brycewray/zola_solo), which offers the same image processing **but** uses [SCSS](https://sass-lang.com/) [through Zola’s built-in SCSS processing](https://www.getzola.org/documentation/content/sass/) instead of Tailwind CSS and PostCSS.
