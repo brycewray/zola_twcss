@@ -17,7 +17,7 @@ See the [online demo](https://zola-twcss.vercel.app/).
 
 For Zola users unused to dealing with JavaScript from [Node.js](https://nodejs.org) plugins and dependencies, this repo may not be your cup of tea, and that’s perfectly understandable.\* However, if you’re willing to take a trip to the Dark Side, it does offer some interesting add-on possibilities. (That said, Zola’s single-binary, nearly-everything-out-of-the-box approach has served it well and is impressive.) In `package.json`, you’ll find dependencies that make possible the use of [PostCSS](https://postcss.org) and [Tailwind CSS](https://tailwindcss.com). The latter includes the still-in-preview **[@tailwindcss/jit](https://github.com/tailwindlabs/tailwindcss-jit) library**; read more about it in [this announcement](https://blog.tailwindcss.com/just-in-time-the-next-generation-of-tailwind-css).
 
-In addition, there are Zola’s [built-in image processing capabilities](https://www.getzola.org/documentation/content/image-processing/). (The **real** site’s repo uses [Cloudinary](https://cloudinary.com) rather than having the images in the repo and processing them as such.
+In addition, there are Zola’s [built-in image processing capabilities](https://www.getzola.org/documentation/content/image-processing/). (The **real** site’s repo uses [Cloudinary](https://cloudinary.com) rather than having the images in the repo and processing them as such.)
 
 ## Handling footnotes
 
