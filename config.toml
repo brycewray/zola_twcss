@@ -18,7 +18,7 @@ description="Site description here"
 # feed_limit = 10
 
 # Whether to automatically compile all Sass files in the sass directory
-compile_sass = true
+compile_sass = false
 
 # When set to "true", the generated HTML files are minified.
 # minify_html = true
