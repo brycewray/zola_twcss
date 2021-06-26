@@ -1,0 +1,78 @@
+{% extends "_default/base.html" %}
+
+{% block content %}
+<div class="container ctr sansSerif">
+  <h1 class="posts-Head">{{ section.title }}</h1>
+  <div class="posts-Container">
+    <p class="ctr pokey">
+    {% if paginator.previous %}
+      <a class="icon" aria-label="First page" href="{{ paginator.first }}">{% include "partials/svgPrevPageIcon.html" %}{% include "partials/svgPrevPageIcon.html" %}</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="icon" aria-label="Previous page" href="{{ paginator.previous }}">{% include "partials/svgPrevPageIcon.html" %}</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    {% else %}
+      {% include "partials/svgFirstPageIcon.html" %}{% include "partials/svgFirstPageIcon.html" %}
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      {% include "partials/svgFirstPageIcon.html" %}
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    {% endif %}
+    {% if paginator.next %}
+      <a class="icon" aria-label="Next page" href="{{ paginator.next }}">{% include "partials/svgNextPageIcon.html" %}</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="icon" aria-label="Last page" href="{{ paginator.last }}">{% include "partials/svgNextPageIcon.html" %}{% include "partials/svgNextPageIcon.html" %}</a>
+    {% else %}
+      {% include "partials/svgLastPageIcon.html" %}
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      {% include "partials/svgLastPageIcon.html" %}{% include "partials/svgLastPageIcon.html" %}
+    {% endif %}
+    </p>
+    <hr class="paginatorTop" />
+    {%- for post in paginator.pages %}
+      <div>
+        <h2 class="posts-Title">
+          <a href="{{ post.permalink | safe }}">{{ post.title }}</a>
+        </h2>
+        <div class="posts-Subtitle"><strong>{{ post.extra.subtitle | safe }}</strong></div>
+        <p class="posts-Dates">
+          <strong>{{ post.date | date(format="%B %e, %Y", timezone="America/Chicago") }}</strong>
+          {% if post.updated %}
+          <br /><span class="seventyFive">Last modified {{ post.updated | date(format="%B %e, %Y", timezone="America/Chicago") }}</span>
+          {% endif %}
+        </p>
+        {% if post.description %}
+        <p class="posts-Description">
+          {{ post.description }}
+        </p>
+        {% endif %}
+      </div>  
+    {%- endfor %}
+    <hr class="paginatorBottom" />
+    <p class="ctr pokey">
+      {% if paginator.previous %}
+        <a class="icon" aria-label="First page" href="{{ paginator.first }}">{% include "partials/svgPrevPageIcon.html" %}{% include "partials/svgPrevPageIcon.html" %}</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="icon" aria-label="Previous page" href="{{ paginator.previous }}">{% include "partials/svgPrevPageIcon.html" %}</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      {% else %}
+        {% include "partials/svgFirstPageIcon.html" %}{% include "partials/svgFirstPageIcon.html" %}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {% include "partials/svgFirstPageIcon.html" %}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      {% endif %}
+      {% if paginator.next %}
+        <a class="icon" aria-label="Next page" href="{{ paginator.next }}">{% include "partials/svgNextPageIcon.html" %}</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="icon" aria-label="Last page" href="{{ paginator.last }}">{% include "partials/svgNextPageIcon.html" %}{% include "partials/svgNextPageIcon.html" %}</a>
+      {% else %}
+        {% include "partials/svgLastPageIcon.html" %}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {% include "partials/svgLastPageIcon.html" %}{% include "partials/svgLastPageIcon.html" %}
+      {% endif %}
+      </p>
+    {% endblock content %}
+  </div>
+</div>

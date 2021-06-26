@@ -1,0 +1,63 @@
+// == footnotes == //
+
+.footnote-definition {
+  font-family: $sans-serif;
+}
+
+.footnote-sim {
+  font-size: 0.65em;
+  color: #0000ff;
+  @media (prefers-color-scheme: dark) {
+    color: #00aaff;
+  }
+}
+
+.footnotes {
+  ol {
+    padding-inline-start: 1.5rem;
+  }
+  ol li {
+    margin-bottom: 0.5rem;
+    font-size: $pokey;
+  }
+  li p {
+    font-size: 100%;
+    line-height: 1.4;
+  }
+  .footnote-backref {
+    font-size: 75%;
+  }
+}
+
+a.footnote-return{
+  font-size: 50%;
+}
+
+article > .footnote-definition {
+  border-top: 1px solid black;
+  padding-top: 1em;
+  margin-top: 1em;
+}
+
+article > .footnote-definition ~ .footnote-definition {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.footnote-definition-label {
+  top: -0.65em;
+}
+
+.footnote-definition-label + p {
+  font-size: 75%;
+  margin-top: -1.75em;
+  margin-left: 1em;
+  line-height: 1.35;
+}
+
+.footnote-definition-label::after {
+  content: ".";
+}
+
+// == end, footnotes == //

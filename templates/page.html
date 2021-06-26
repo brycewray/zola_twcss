@@ -1,0 +1,11 @@
+{% extends "_default/base.html" %}
+
+{% block content %}
+{% include "partials/billboard.html" %}
+<div class="container-narrower">
+  <article class="article">
+    <div class="post-line"></div>
+    {{ page.content | safe }}
+  </article>
+</div>
+{% endblock content %}

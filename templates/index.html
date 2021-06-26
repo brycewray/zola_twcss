@@ -1,0 +1,33 @@
+{% extends "_default/base.html" %}
+
+{% block content %}
+<main>
+  <div class="container-home">
+    <div class="homeOpen">
+      <h1>Home page</h1>
+      <p>This sentence comes from the template.</p>
+      {{ section.content | safe }}
+    </div>
+    <div class="homePost-Div">
+      <div class="post-line"></div>
+      <h2 class="homePost-Latest">Latest <a href="/posts">posts</a></h2>
+      {%- set section = get_section(path="posts/_index.md") %}
+      {%- for post in section.pages | slice(end=3) %}
+      
+        <div>
+          <h2 class="homePost-Title"><a href="{{ post.permalink | safe }}">{{ post.title }}</a></h2>
+          <p class="homePost-Subtitle">{% if post.extra.subtitle %}{{ post.extra.subtitle }}{% endif %}</p>
+          <p class="homePost-Dates">
+            <strong>{{ post.date  | date(format="%B %e, %Y", timezone="America/Chicago") }}</strong>{% if post.updated %}<br />
+            Last modified {{ post.updated | date(format="%B %e, %Y", timezone="America/Chicago") }}{% endif %}
+          </p>
+          <p class="homePost-Description">
+            {{ post.description}}
+          </p>
+        {%- endfor %}
+        <p style="margin-top: 2em;"><a href="/posts/"><strong>All {{ section.pages | length }} posts</strong></a> <span class="pokey"><em>(listed five per page)</em></span></p>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock content %}

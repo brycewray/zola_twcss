@@ -1,0 +1,8 @@
+<div class="billboard-div">
+  <div class="billboard-title-block">
+    <h1 class="billboard-title-text">{{ page.title }}</h1>
+    {% if page.extra.subtitle %}<h2 class="billboard-subtitle-text">{{ page.extra.subtitle }}</h2>{% endif %}
+    {% if page.description %}<p class="billboard-description-text">{{ page.description }}</p>{% endif %}
+    <p class="billboard-p-text"><strong>{{ page.date | date(format="%B %e, %Y", timezone="America/Chicago") }}</strong>{% if page.updated %}<br /><span style="font-size: 75%;">Last modified {{ page.updated | date(format="%B %e, %Y", timezone="America/Chicago") }}</span>{% endif %}</p>
+  </div>
+</div>

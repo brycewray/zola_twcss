@@ -1,0 +1,14 @@
+// not using @use here until Zola supports it (not likely soon)
+@import 'variables';
+@import 'code';
+@import 'global';
+@import 'utility';
+@import 'tables';
+@import 'billboard';
+@import 'posts';
+@import 'footnotes';
+@import 'home';
+@import 'nav';
+@import 'lazyload';
+@import 'ffoxobliq'; // if using system font stack
+@import 'iefixes';

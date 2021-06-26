@@ -1,0 +1,28 @@
+{% extends "_default/base.html" %}
+
+{% block content %}
+{% include "partials/billboard.html" %}
+<div class="container-narrower">
+  <article class="article">
+    <div class="post-line"></div>
+    {{ page.content | safe }}
+  </article>
+</div>
+{% if page.earlier or page.later %}
+  <div class="bg-dark">
+    <h3 class="ctr why prevnextH3"><a href="/posts/">Other posts</a></h3>
+    {% if page.later %}
+    <p class="ctr prevnextP">
+      <strong>Next</strong>: 
+      <a class="next" href="{{ page.later.permalink }}">{{ page.later.title }}</a>
+    </p>
+    {% endif %}
+    {% if page.earlier %}
+    <p class="ctr prevnextP">
+      <strong>Previous</strong>: 
+      <a class="previous" href="{{ page.earlier.permalink }}">{{ page.earlier.title}}</a>
+    </p>
+    {% endif %}
+  </div>
+{% endif %}
+{% endblock content %}
