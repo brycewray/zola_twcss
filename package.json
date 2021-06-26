@@ -4,15 +4,20 @@
   "private": true,
   "scripts": {
     "clean": "rimraf public && rimraf static/css",
-    "start": "npm-run-all clean --parallel dev:*",
+    "start": "npm-run-all clean prod:postcss --parallel dev:*",
     "dev:postcss": "postcss css/index.css -o ./static/css/index.css --config ./postcss.config.js -w",
     "dev:serve": "zola serve",
-    "build": "NODE_ENV=production npm-run-all clean --parallel prod:*",
+    "build": "NODE_ENV=production npm-run-all clean prod:postcss prod:build",
     "prod:postcss": "postcss css/index.css -o ./static/css/index.css --config ./postcss.config.js",
     "prod:build": "zola build"
   },
   "author": "",
   "license": "MIT",
+  "browserslist": [
+    "last 4 versions",
+    "> 1%",
+    "maintained node versions"
+  ],
   "devDependencies": {
     "autoprefixer": "^10.2.6",
     "glob": "^7.1.7",
