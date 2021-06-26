@@ -23,4 +23,4 @@ In addition, there are Zola’s [built-in image processing capabilities](https:/
 
 Please see `/content/about/index.md` for information concerning how Zola handles footnotes, since this is different than you’ll likely find on other SSGs.
 
-\* If you don’t care for dealing with Node.js dependencies, you may be interested in another Zola repo, [zola_solo](https://github.com/brycewray/zola_solo), which offers the same image processing **but** uses [SCSS](https://sass-lang.com/) [through Zola’s built-in SCSS processing](https://www.getzola.org/documentation/content/sass/) instead of Tailwind CSS and PostCSS.
+\* If you don’t care for dealing with Node.js dependencies, you may be interested in another Zola repo, [zola_solo](https://github.com/brycewray/zola_solo), which offers the same image processing **but** uses [SCSS](https://sass-lang.com/) [through Zola’s built-in SCSS support](https://www.getzola.org/documentation/content/sass/) instead of Tailwind CSS and PostCSS.
