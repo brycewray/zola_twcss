@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "clean": "rimraf public && rimraf static/css",
-    "start": "npm-run-all clean prod:postcss --parallel dev:*",
+    "initcss": "node initcss.js",
+    "start": "npm-run-all clean initcss --parallel dev:*",
     "dev:postcss": "postcss css/index.css -o ./static/css/index.css --config ./postcss.config.js -w",
     "dev:serve": "zola serve",
     "build": "NODE_ENV=production npm-run-all clean prod:postcss prod:build",
