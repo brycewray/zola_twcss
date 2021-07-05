@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "rimraf public && rimraf static/css",
     "initcss": "node initcss.js",
-    "start": "npm-run-all clean initcss --parallel dev:*",
+    "start": "TAILWIND_MODE=watch NODE_ENV=development npm-run-all clean initcss --parallel dev:*",
     "dev:postcss": "postcss css/index.css -o ./static/css/index.css --config ./postcss.config.js -w",
     "dev:serve": "zola serve",
     "build": "NODE_ENV=production npm-run-all clean prod:postcss prod:build",
