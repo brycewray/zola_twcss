@@ -8,8 +8,9 @@
     srcset="
     {% for size in respSizes -%}
       {%- if size <= width -%}
-        {{ resize_image(path=path, width=size, op="fit_width") }} {{ size }}w, 
-      {% endif %}
+        {{ resize_image(path=path, width=size, op="fit_width") }} {{ size }}w
+        {%- if not loop.last -%}, {% endif -%}
+      {%- endif -%}
     {%- endfor -%}
     "
     alt="{{ alt }}" 
