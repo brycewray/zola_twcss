@@ -1,5 +1,7 @@
 # Zola starter set
 
+**Note**: Further development suspended as of 2021-09-11.
+
 This is a starter set for the [Zola](https://getzola.org) [static site generator (SSG)](https://www.jamstack.org/generators), based on the appearance of my website at [brycewray.com](https://www.brycewray.com).
 
 See the [online demo](https://zola-twcss.vercel.app/).
